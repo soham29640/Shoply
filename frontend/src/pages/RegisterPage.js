@@ -13,17 +13,28 @@ const RegisterPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (form.password !== form.confirm) { setError('Passwords do not match.'); return; }
-    if (form.password.length < 6) { setError('Password must be at least 6 characters.'); return; }
+    setError('');
+    if (form.password !== form.confirm) {
+      setError('Passwords do not match.');
+      return;
+    }
+    if (form.password.length < 6) {
+      setError('Password must be at least 6 characters.');
+      return;
+    }
     setLoading(true);
     try {
-      const res = await registerUser({ name: form.name, email: form.email, password: form.password });
+      const res = await registerUser({
+        name: form.name,
+        email: form.email,
+        password: form.password
+      });
+      // Real JWT token from backend
       login(res.data.user, res.data.token);
       navigate('/');
-    } catch {
-      // Demo: auto-login
-      login({ name: form.name, email: form.email }, 'demo-token-' + Date.now());
-      navigate('/');
+    } catch (err) {
+      const msg = err.response?.data?.error || 'Registration failed. Please try again.';
+      setError(msg);
     } finally {
       setLoading(false);
     }
@@ -32,7 +43,7 @@ const RegisterPage = () => {
   return (
     <div className="auth-page">
       <div className="auth-box">
-        <div className="auth-logo">amazon<span>clone</span></div>
+        <div className="auth-logo">shoply<span>.in</span></div>
         <h1 className="auth-title">Create account</h1>
         {error && <div className="auth-error">{error}</div>}
         <form onSubmit={handleSubmit} className="auth-form">
@@ -44,14 +55,23 @@ const RegisterPage = () => {
           ].map(f => (
             <div className="form-group" key={f.key}>
               <label>{f.label}</label>
-              <input type={f.type} required value={form[f.key]} onChange={e => setForm({ ...form, [f.key]: e.target.value })} placeholder={f.placeholder} />
+              <input
+                type={f.type}
+                required
+                value={form[f.key]}
+                onChange={e => setForm({ ...form, [f.key]: e.target.value })}
+                placeholder={f.placeholder}
+              />
             </div>
           ))}
           <button type="submit" className="auth-btn" disabled={loading}>
-            {loading ? 'Creating account...' : 'Create your Amazon Clone account'}
+            {loading ? 'Creating account...' : 'Create your Shoply account'}
           </button>
         </form>
-        <p className="auth-terms">By creating an account, you agree to Amazon Clone's <a href="#">Conditions of Use</a> and <a href="#">Privacy Notice</a>.</p>
+        <p className="auth-terms">
+          By creating an account, you agree to Shoply's{' '}
+          <a href="#">Conditions of Use</a> and <a href="#">Privacy Notice</a>.
+        </p>
         <div className="auth-divider"><span>Already have an account?</span></div>
         <Link to="/login" className="auth-create-btn">Sign in</Link>
       </div>

@@ -24,8 +24,8 @@ const Navbar = () => {
       <div className="navbar-top">
         {/* Logo */}
         <Link to="/" className="navbar-logo">
-          <span className="logo-text">amazon</span>
-          <span className="logo-dot">clone</span>
+          <span className="logo-text">shoply</span>
+          <span className="logo-dot">.in</span>
         </Link>
 
         {/* Deliver To */}
@@ -49,7 +49,7 @@ const Navbar = () => {
           <input
             type="text"
             className="search-input"
-            placeholder="Search Amazon Clone..."
+            placeholder="Search Shoply..."
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
           />

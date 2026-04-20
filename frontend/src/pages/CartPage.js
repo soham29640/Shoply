@@ -19,7 +19,7 @@ const CartPage = () => {
       <div className="cart-empty container">
         <div className="empty-cart-box">
           <div className="empty-icon">🛒</div>
-          <h2>Your Amazon Clone Cart is empty</h2>
+          <h2>Your Shoply Cart is empty</h2>
           <p>Your shopping cart is waiting. Give it purpose – fill it with groceries, clothing, household supplies, electronics and more.</p>
           <Link to="/" className="continue-shopping">Continue Shopping</Link>
         </div>

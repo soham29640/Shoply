@@ -30,8 +30,8 @@ const categories = [
 ];
 
 const bannerSlides = [
-  { bg: 'linear-gradient(135deg, #131921 0%, #232f3e 100%)', title: 'Great Indian Festival', subtitle: 'Up to 80% off on top brands', cta: 'Shop Now', link: '/search?q=sale' },
-  { bg: 'linear-gradient(135deg, #FF9900 0%, #e68900 100%)', title: 'Prime Deals', subtitle: 'Exclusive offers for Prime members', cta: 'Explore Prime', link: '/' },
+  { bg: 'linear-gradient(135deg, #131921 0%, #232f3e 100%)', title: 'Great Shoply Sale', subtitle: 'Up to 80% off on top brands', cta: 'Shop Now', link: '/search?q=sale' },
+  { bg: 'linear-gradient(135deg, #FF9900 0%, #e68900 100%)', title: 'Shoply Prime', subtitle: 'Exclusive offers for Prime members', cta: 'Explore Prime', link: '/' },
   { bg: 'linear-gradient(135deg, #007185 0%, #005f73 100%)', title: 'Electronics Bonanza', subtitle: 'Best deals on gadgets & more', cta: 'Shop Electronics', link: '/search?q=electronics' },
 ];
 

@@ -39,8 +39,8 @@ const Footer = () => (
       </div>
     </div>
     <div className="footer-bottom">
-      <div className="footer-logo">amazon<span>clone</span></div>
-      <p className="footer-copy">© 2024 Amazon Clone. All rights reserved. Built with ❤️ using React + Spring Boot</p>
+      <div className="footer-logo">shoply<span>.in</span></div>
+      <p className="footer-copy">© 2024 Shoply. All rights reserved. Built with ❤️ using React + Spring Boot</p>
     </div>
   </footer>
 );
